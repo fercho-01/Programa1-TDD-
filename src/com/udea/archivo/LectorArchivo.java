@@ -26,7 +26,7 @@ public class LectorArchivo
 	        // Lectura del fichero
 	        String linea;
 	        while((linea=br.readLine())!=null){
-	            float nodo = Float.ParseFloat(linea);
+	            float nodo = Float.parseFloat(linea);
 	        	datos.AgregarNodo(nodo);
 	        }
 	     }

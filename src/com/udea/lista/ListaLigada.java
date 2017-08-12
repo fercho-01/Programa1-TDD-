@@ -5,6 +5,8 @@ public class ListaLigada
 	public Nodo cabeza;
 	public int	cantidad;
 	public Nodo ultimo;
+	
+	float suma;
 
 	public ListaLigada(float n)
 	{
@@ -23,10 +25,12 @@ public class ListaLigada
 	public void AgregarNodo(float n)
 	{
 		Nodo nNodo = new Nodo(n);
+		suma += n;
 		nNodo.AsignarSiguiente(ultimo);
 		if (cantidad == 0)
 		{
 			cabeza = nNodo;
+			ultimo = nNodo;
 		}else{
 			ultimo.AsignarSiguiente(nNodo);
 		}
@@ -36,14 +40,7 @@ public class ListaLigada
 	
 	public float RetornarSuma()
 	{
-		float resultado = cabeza.valor;
-		Nodo flotante = cabeza;
-		do {
-			flotante 	 = 	flotante.siguiente;
-			resultado 	+= 	flotante.valor;
-		}while(flotante!=ultimo);
-		
-		return resultado;
+		return suma;
 	}
 	
 	public int RetornarCantidad()
