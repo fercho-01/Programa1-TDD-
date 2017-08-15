@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import com.udea.lista.ListaLigada;
 
-public class CalculadoraTest {
+public class CalculadoraPromedioTest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,6 +18,12 @@ public class CalculadoraTest {
 		ListaLigada numeros = new ListaLigada();
 		float valor = Calculadora.calcularPromedio(numeros);
 		assertTrue(0==valor);	
+	}
+	
+	@Test
+	public void testMediaListaVacia2(){
+		float valor = Calculadora.calcularPromedio(null);
+		assertTrue(0==valor);
 	}
 	
 	@Test
