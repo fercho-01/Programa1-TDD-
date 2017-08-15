@@ -37,4 +37,13 @@ public class ListaTest
 		System.out.println(nLista.RetornarSuma());
 		assertTrue(nLista.RetornarSuma() == 12);
 	}
+	@Test
+	
+	public void TestArchivo2()
+	{
+		LectorArchivo nLector = new LectorArchivo();
+		ListaLigada nLista = nLector.CrearArchivo("C:\\Users\\LENOVO\\Desktop\\texto.txt");
+		System.out.println(nLista.RetornarSuma());
+		assertTrue(nLista.RetornarSuma() == 12);
+	}
 }
