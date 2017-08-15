@@ -33,6 +33,16 @@ public class CalculadoraDesviacionEstandarTest {
 	}
 	
 	@Test
+	public void testDesviacionDosNumeros(){
+		ListaLigada numeros = new ListaLigada();
+		numeros.AgregarNodo(-1);
+		numeros.AgregarNodo(10);
+		
+		float valor = Calculadora.calcularDesviacionEstandar(numeros);
+		assert(7.7781744f==valor);
+	}
+	
+	@Test
 	public void testDesviacionVariosNumerosPositivos(){
 		ListaLigada numeros = new ListaLigada();
 		numeros.AgregarNodo(186);
@@ -46,8 +56,33 @@ public class CalculadoraDesviacionEstandarTest {
 		numeros.AgregarNodo(788);
 		numeros.AgregarNodo(1601);
 		float valor = Calculadora.calcularDesviacionEstandar(numeros);
-		System.out.println(valor);
-		assert(7.1894019222742==valor);
+		assert(625.634f==valor);
+	}
+	
+	@Test
+	public void testDesviacionVariosNumerosNegativos(){
+		ListaLigada numeros = new ListaLigada();
+		numeros.AgregarNodo(-1);
+		numeros.AgregarNodo(-4);
+		numeros.AgregarNodo(-7);
+		numeros.AgregarNodo(0);
+		
+		float valor = Calculadora.calcularDesviacionEstandar(numeros);
+		assert(3.1622777f==valor);
+	}
+	
+	@Test
+	public void testDesviacionVariosNumerosPositivosNegativos(){
+		ListaLigada numeros = new ListaLigada();
+		numeros.AgregarNodo(-1);
+		numeros.AgregarNodo(10);
+		numeros.AgregarNodo(-7);
+		numeros.AgregarNodo(0);
+		numeros.AgregarNodo(12);
+		
+		float valor = Calculadora.calcularDesviacionEstandar(numeros);
+
+		assert(7.981228f==valor);
 	}
 
 }
