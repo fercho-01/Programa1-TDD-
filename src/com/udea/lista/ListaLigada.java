@@ -26,13 +26,15 @@ public class ListaLigada
 	{
 		Nodo nNodo = new Nodo(n);
 		suma += n;
-		nNodo.AsignarSiguiente(ultimo);
+		
+		//nNodo.AsignarSiguiente(ultimo);
 		if (cantidad == 0)
 		{
 			cabeza = nNodo;
 			ultimo = nNodo;
 		}else{
 			ultimo.AsignarSiguiente(nNodo);
+			ultimo=nNodo;
 		}
 		
 		cantidad ++;
